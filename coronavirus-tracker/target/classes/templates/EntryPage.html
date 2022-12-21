@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Corona Virus Tracker Application</title>
+</head>
+<body>
+
+      <form action="corona status" method = "post">
+ 		To know about  number of cases reported across the globe 
+ 		<button>Click Here</button>  
+ 	</form>
+ 	
+ 	
+ 	<form action="corona cases" method = "post">
+ 		<label>To know about  number of cases reported on a country</label>
+
+ 		<input list="Countries" id="CountriesList" name ="Country" >
+ 		<datalist id ="Countries">
+ 		<option value="0">select option</option>
+    <option th:each="locationSta : ${Locationstat}" th:value="${locationSta.country}" th:text="${locationSta.country}">
+    </option>
+       </datalist>
+  	<input type="submit">
+ 	</form>
+ 	
+ 	
+ 	 <form action="new cases" method = "post">
+ 		To know about  number of newcases reported across the globe 
+ 			<button>Click Here</button> 
+ 	</form>
+
+</body>
+</html>
